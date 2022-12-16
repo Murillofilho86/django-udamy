@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block titulo %} Cadastro | {% endblock %}
 
 {% block conteudo %}
 <h1 clas="mt-3 mb-3">Cadastro</h1>
@@ -8,19 +9,19 @@
         {% csrf_token %}
     <div class="form-group">
         <label>Nome</label>
-        <input type="text" name="nome" class="form-control">
+        <input type="text" name="nome" value="{{request.POST.nome}}" class="form-control">
     </div>
     <div class="form-group">
         <label>Sobrenome</label>
-        <input type="sobrenome" name="sobrenome" class="form-control">
+        <input type="sobrenome" name="sobrenome" value="{{request.POST.sobrenome}}" class="form-control">
     </div>
     <div class="form-group">
         <label>E-mail</label>
-        <input type="email" name="email" class="form-control">
+        <input type="email" name="email" value="{{request.POST.email}}" class="form-control">
     </div>
     <div class="form-group">
         <label>Usuário</label>
-        <input type="usuario" name="usuario" class="form-control">
+        <input type="usuario" name="usuario" value="{{request.POST.usuario}}" class="form-control">
     </div>
     <div class="form-group">
         <label>Senha</label>

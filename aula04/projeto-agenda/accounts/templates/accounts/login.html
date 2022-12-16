@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 
+{% block titulo %} Login {% endblock %}
 
 {% block conteudo %}
+<h1 clas="mt-3 mb-3">Cadastro</h1>
+<form method="POST" {% url 'signup' %}>
+    {% include 'partials/_messages.html' %}
+    {% csrf_token %}
+
+    <div class="form-group">
+        <label>Usuário</label>
+        <input type="usuario" name="usuario" value="{{request.POST.usuario}}" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Senha</label>
+        <input type="password" name="senha" class="form-control">
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
 
 {% endblock %}
